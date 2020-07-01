@@ -12,6 +12,8 @@ public class Main {
 		
 		Matrix m = mSeq.execute(iomanager.getLHS(), iomanager.getRHS());
 		
+		iomanager.writeMatrixFile(m);
+		
 		for (int i = 0; i < d; i++) {
 			for (int j = 0; j < d; j++) {
 				System.out.print(m.getMatrix()[i][j] + " ");
