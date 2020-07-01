@@ -46,6 +46,13 @@ public class Matrix {
 		this.n = n;
 	}
 	
+	public float at(int i, int j) 
+	{
+		return this.matrix[i][j];
+	}
 	
-	
+	public void add(int i, int j, float value) 
+	{
+		this.matrix[i][j] = value;
+	}
 }
