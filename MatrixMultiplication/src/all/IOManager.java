@@ -9,6 +9,7 @@ public class IOManager {
 	
 	private final static String LHS_PREFFIX = "A";
 	private final static String RHS_PREFFIX = "B";
+	private final static String ANSWER_PREFFIX = "B";
 	private final static String EXTENSION = ".txt";
 	
 	private String path;
@@ -29,6 +30,12 @@ public class IOManager {
 	
 	public Matrix getRHS() {
 		return readMatrixFile(RHS_PREFFIX, d);
+	}
+	
+	public void writeMatrixFile(Matrix matrix) {
+		
+		String filePath = this.path + ANSWER_PREFFIX + d + "x" + d + EXTENSION;
+		//TODO
 	}
 	
 	public Matrix readMatrixFile(String preffix, int d) {
@@ -65,7 +72,7 @@ public class IOManager {
 			matrix = new Matrix(m_aux, m, n);
 			
 		} catch (IOException e) {
-			
+			System.out.println("Arquivo " + filePath + " não encontrado.");
 			e.printStackTrace();
 		} 
 		

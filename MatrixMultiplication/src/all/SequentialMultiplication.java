@@ -1,14 +1,14 @@
 package all;
 
-public class Sequential extends Multiplicator
+public class SequentialMultiplication extends MatrixOperator
 {
-	public Matrix multiply(Matrix a, Matrix b) 
+	public Matrix execute(Matrix a, Matrix b) 
 	{
 		Matrix c = new Matrix(a.getN(), b.getM());
 		
 		for(int i = 0; i < a.getN(); i++) 
 		{
-			for(int j = 0; j < b.getM(); j++) 
+			for(int j = 0; j < b.getM(); j++)
 			{
 				float somaLinha = 0;
 				

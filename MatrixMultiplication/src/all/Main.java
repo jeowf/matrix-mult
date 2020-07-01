@@ -4,12 +4,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		IOManager iomanager = new IOManager("data/", 4);
+		int d = 4;
 		
-		Matrix m = iomanager.getLHS();
+		IOManager iomanager = new IOManager("data/", d);
 		
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		MatrixOperator mSeq = new SequentialMultiplication();
+		
+		Matrix m = mSeq.execute(iomanager.getLHS(), iomanager.getRHS());
+		
+		for (int i = 0; i < d; i++) {
+			for (int j = 0; j < d; j++) {
 				System.out.print(m.getMatrix()[i][j] + " ");
 			}
 			System.out.println("");
