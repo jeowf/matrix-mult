@@ -1,15 +1,17 @@
 package all;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class IOManager {
 	
 	private final static String LHS_PREFFIX = "A";
 	private final static String RHS_PREFFIX = "B";
-	private final static String ANSWER_PREFFIX = "B";
+	private final static String ANSWER_PREFFIX = "C";
 	private final static String EXTENSION = ".txt";
 	
 	private String path;
@@ -35,7 +37,32 @@ public class IOManager {
 	public void writeMatrixFile(Matrix matrix) {
 		
 		String filePath = this.path + ANSWER_PREFFIX + d + "x" + d + EXTENSION;
-		//TODO
+		try 
+		{
+		    String str = matrix.getN() + " " + matrix.getM() + "\n";
+		    
+		    BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+		    
+		    writer.append(str);
+		    
+		    for(int i = 0; i < matrix.getN(); i++) 
+		    {
+		    	str = "";
+		    	for(int j = 0; j < matrix.getM(); j++) 
+		    	{
+		    		str = str.concat(matrix.at(i, j) + " ");
+		    	}
+		    	str = str.concat("\n");
+		    	writer.append(str);
+		    }
+		     
+		    writer.close();
+		}
+		catch(IOException e)
+		{
+			System.out.println("Erro na criação do arquivo da matriz resposta");
+			e.printStackTrace();
+		}
 	}
 	
 	public Matrix readMatrixFile(String preffix, int d) {
