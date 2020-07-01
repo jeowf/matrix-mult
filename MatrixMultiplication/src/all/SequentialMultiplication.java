@@ -1,6 +1,6 @@
 package all;
 
-public class SequentialMultiplication extends MatrixOperator
+public class SequentialMultiplication implements MatrixOperator
 {
 	public Matrix execute(Matrix a, Matrix b) 
 	{
@@ -18,7 +18,8 @@ public class SequentialMultiplication extends MatrixOperator
 				}
 				
 				c.add(i, j, somaLinha);
-			}
+			}			
+			
 		}
 		
 		return c;

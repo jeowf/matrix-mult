@@ -1,6 +1,6 @@
 package all;
 
-public abstract class MatrixOperator
+public interface MatrixOperator
 {
-	public abstract Matrix execute(Matrix m1, Matrix m2);
+	public Matrix execute(Matrix m1, Matrix m2);
 }

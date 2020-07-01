@@ -8,7 +8,9 @@ public class Main {
 		
 		IOManager iomanager = new IOManager("data/", d);
 		
-		MatrixOperator mSeq = new SequentialMultiplication();
+		MatrixOperator mSeq = new ConcurrentMultiplication(2);
+		
+		//MatrixOperator mSeq = new SequentialMultiplication();
 		
 		Matrix m = mSeq.execute(iomanager.getLHS(), iomanager.getRHS());
 		
