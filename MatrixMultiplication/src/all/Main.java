@@ -4,11 +4,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		int d = 4;
+		int d = 2048;
 		
 		IOManager iomanager = new IOManager("data/", d);
 		
-		MatrixOperator mSeq = new ConcurrentMultiplication(2);
+		MatrixOperator mSeq = new ConcurrentMultiplication(12);
 		
 		//MatrixOperator mSeq = new SequentialMultiplication();
 		
@@ -16,13 +16,9 @@ public class Main {
 		
 		iomanager.writeMatrixFile(m);
 		
-		for (int i = 0; i < d; i++) {
-			for (int j = 0; j < d; j++) {
-				System.out.print(m.getMatrix()[i][j] + " ");
-			}
-			System.out.println("");
-		}
 		
+		
+		System.out.println("Finished");
 	}
 	
 }
