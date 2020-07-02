@@ -1,11 +1,23 @@
 package all;
 
+/**
+ * Matrix
+ * @author Felipe M.
+ * @author Kevin W.
+ *
+ */
 public class Matrix {
 
 	private float[][] matrix;
 	
 	private int m,n; 
 	
+	/**
+	 * Constructor
+	 * @param matrix
+	 * @param m
+	 * @param n
+	 */
 	public Matrix(float[][] matrix, int m, int n) {
 		
 		this.m = m;
@@ -14,6 +26,11 @@ public class Matrix {
 		this.matrix = matrix;
 	}
 
+	/**
+	 * Costruct a matrix with 0's
+	 * @param m
+	 * @param n
+	 */
 	public Matrix(int m, int n) {
 		
 		this.m = m;

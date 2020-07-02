@@ -1,5 +1,10 @@
 package all;
 
+/**
+ * Calculation of a row in the new matrix
+ * @author Felipe M.
+ *
+ */
 public class LineCalculation extends Thread {
 
 	private Matrix a;
@@ -7,6 +12,14 @@ public class LineCalculation extends Thread {
 	private Matrix c;
 	private int i;
 	
+	/**
+	 * Constructor
+	 * @param a
+	 * @param b
+	 * @param c
+	 * @param i
+	 * @param name
+	 */
 	public LineCalculation(Matrix a, Matrix b, Matrix c, int i, String name) {
 		super(name);
 		this.a = a;
@@ -15,6 +28,10 @@ public class LineCalculation extends Thread {
 		this.i = i;
 	}
 	
+	/**
+	 * Calculate the row's values
+	 * 
+	 */
 	@Override
 	public void run() {
 		for(int j = 0; j < b.getM(); j++)

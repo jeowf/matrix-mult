@@ -1,6 +1,17 @@
 package all;
 
+/**
+ * Generalization of matrix operator
+ * @author Felipe M.
+ *
+ */
 public interface MatrixOperator
 {
-	public Matrix execute(Matrix m1, Matrix m2);
+	/**
+	 * Execute the operator between the 2 matrices
+	 * @param lhs
+	 * @param rhs
+	 * @return resulting matrix
+	 */
+	public Matrix execute(Matrix lhs, Matrix rhs);
 }

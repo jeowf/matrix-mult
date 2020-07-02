@@ -1,20 +1,30 @@
 package all;
 
+/**
+ * Sequential matrix multiplication
+ * @author Kevin W.
+ *
+ */
 public class SequentialMultiplication implements MatrixOperator
 {
-	public Matrix execute(Matrix a, Matrix b) 
+	/**
+	 * Execute the multiplication of 2 matrices
+	 * @param lhs
+	 * @param rhs
+	 */
+	public Matrix execute(Matrix lhs, Matrix rhs) 
 	{
-		Matrix c = new Matrix(a.getN(), b.getM());
+		Matrix c = new Matrix(lhs.getN(), rhs.getM());
 		
-		for(int i = 0; i < a.getN(); i++) 
+		for(int i = 0; i < lhs.getN(); i++) 
 		{
-			for(int j = 0; j < b.getM(); j++)
+			for(int j = 0; j < rhs.getM(); j++)
 			{
 				float somaLinha = 0;
 				
-				for(int k = 0; k < a.getM(); k++) 
+				for(int k = 0; k < lhs.getM(); k++) 
 				{
-					somaLinha = somaLinha + (a.at(i,k) * b.at(k, j));
+					somaLinha = somaLinha + (lhs.at(i,k) * rhs.at(k, j));
 				}
 				
 				c.add(i, j, somaLinha);

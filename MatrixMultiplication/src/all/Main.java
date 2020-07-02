@@ -6,6 +6,9 @@ public class Main {
 		
 		int d = 2048;
 		
+		int cores = Runtime.getRuntime().availableProcessors();
+		System.out.println(cores);
+		
 		IOManager iomanager = new IOManager("data/", d);
 		
 		MatrixOperator mSeq = new ConcurrentMultiplication(12);

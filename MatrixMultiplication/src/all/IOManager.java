@@ -7,6 +7,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Input/Output manager
+ * @author Felipe M.
+ * @author Kevin W.
+ *
+ */
 public class IOManager {
 	
 	private final static String LHS_PREFFIX = "A";
@@ -18,7 +24,11 @@ public class IOManager {
 	
 	private int d;
 	
-	
+	/**
+	 * Constructor
+	 * @param path
+	 * @param d
+	 */
 	public IOManager(String path, int d) {
 		this.path = path;
 		this.d = d;
@@ -26,14 +36,26 @@ public class IOManager {
 		
 	}
 	
+	/**
+	 * Get the lhs matrix
+	 * @return lhs matrix
+	 */
 	public Matrix getLHS() {
 		return readMatrixFile(LHS_PREFFIX, d);
 	}
 	
+	/**
+	 * Get the rhs matrix
+	 * @return rhs matrix
+	 */
 	public Matrix getRHS() {
 		return readMatrixFile(RHS_PREFFIX, d);
 	}
 	
+	/**
+	 * Write a matrix in a file
+	 * @param matrix
+	 */
 	public void writeMatrixFile(Matrix matrix) {
 		
 		String filePath = this.path + ANSWER_PREFFIX + d + "x" + d + EXTENSION;
@@ -60,11 +82,17 @@ public class IOManager {
 		}
 		catch(IOException e)
 		{
-			System.out.println("Erro na criação do arquivo da matriz resposta");
-			e.printStackTrace();
+			System.out.println("Error on file creation");
+			//e.printStackTrace();
 		}
 	}
 	
+	/**
+	 * Read a matrix from a file
+	 * @param preffix of the file
+	 * @param dimenson
+	 * @return readed matrix
+	 */
 	public Matrix readMatrixFile(String preffix, int d) {
 		Matrix matrix = null;
 		
