@@ -126,6 +126,8 @@ public class IOManager {
 			
 			matrix = new Matrix(m_aux, m, n);
 			
+			file.close();
+			
 		} catch (IOException e) {
 			System.out.println("Arquivo " + filePath + " não encontrado.");
 			e.printStackTrace();
@@ -134,5 +136,15 @@ public class IOManager {
 		
 		return matrix;
 	}
+
+	public int getD() {
+		return d;
+	}
+
+	public void setD(int d) {
+		this.d = d;
+	}
+	
+	
 	
 }
