@@ -29,6 +29,7 @@ public class Main {
 			d = Integer.parseInt(args[0]);
 		} catch(Exception e) {
 			System.out.println("Invalid number of dimension!");
+			System.exit(0);
 		}
 		
 		// reading second parameter
@@ -40,6 +41,7 @@ public class Main {
 				iterations = Integer.parseInt(args[2]);
 			} catch(Exception e) {
 				System.out.println("Invalid number of interations!");
+				System.exit(0);
 			}
 			
 		} 
@@ -90,6 +92,7 @@ public class Main {
 			*/
 		} else {
 			System.out.println("Invalid algorithm! Choose S or C!");
+			System.exit(0);
 		}
 		
 		
@@ -140,6 +143,7 @@ public class Main {
 
 		} catch (IOException e) {
 			System.out.println("Cannot create the output file!");
+			System.exit(0);
 		}
 		//programa 4 cs 20  all
 		
